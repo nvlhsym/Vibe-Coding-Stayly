@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create your account - Stayly</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">s</div>
+      <span class="logo-text">stayly</span>
+    </div>
+    <nav class="main-nav">
+      <a href="#" class="nav-link active">Stays</a>
+      <a href="#" class="nav-link">Experiences</a>
+      <a href="#" class="nav-link">Trip planner</a>
+      <a href="#" class="nav-link">Host</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" aria-label="Language">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </button>
+      <!-- Theme Toggler -->
+      <button class="icon-button" id="theme-toggle" aria-label="Toggle Theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <button class="sign-in-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        Sign in
+        <div class="avatar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="auth-container">
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-subtitle">Join Stayly to save stays and book with all-pricing, no surprises.</p>
+
+      <button class="btn-google">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.6402 9.2045C17.6402 8.56636 17.5829 7.95272 17.4765 7.36363H9V10.845H13.8436C13.635 11.9699 13.0009 12.9231 12.0477 13.5613V15.8195H14.9563C16.6582 14.2527 17.6402 11.9454 17.6402 9.2045Z" fill="#4285F4"/>
+          <path d="M9.00001 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5613C11.2418 14.1013 10.2109 14.4204 9.00001 14.4204C6.65592 14.4204 4.67183 12.8372 3.9641 10.71H0.957275V13.0418C2.43818 15.9831 5.48183 18 9.00001 18Z" fill="#34A853"/>
+          <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.82999 3.96409 7.28999V4.95817H0.957273C0.347727 6.17317 0 7.54772 0 9C0 10.4523 0.347727 11.8268 0.957273 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+          <path d="M9.00001 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9.00001 0C5.48183 0 2.43818 2.01682 0.957275 4.95818L3.9641 7.29C4.67183 5.16273 6.65592 3.57955 9.00001 3.57955Z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </button>
+
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <form class="auth-form" onsubmit="event.preventDefault();">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="example@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="At least 8 characters" required>
+        </div>
+        <button type="submit" class="btn-submit">Create account</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html" class="brand-link">Sign in</a></p>
+        <a href="#" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to stays
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">s</div>
+          <span class="logo-text">stayly</span>
+        </div>
+        <p>A short-term rental marketplace built on transparent pricing and human hosts.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Support</h4>
+          <a href="#">Help center</a>
+          <a href="#">Cancellation</a>
+          <a href="#">Safety</a>
+          <a href="#">Report a concern</a>
+        </div>
+        <div class="footer-column">
+          <h4>Hosting</h4>
+          <a href="#">Host your place</a>
+          <a href="#">Host resources</a>
+          <a href="#">Community</a>
+          <a href="#">Responsible hosting</a>
+        </div>
+        <div class="footer-column">
+          <h4>Stayly</h4>
+          <a href="#">About</a>
+          <a href="#">Newsroom</a>
+          <a href="#">Careers</a>
+          <a href="#">Investors</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        © 2026 Stayly, Inc. All prices shown are total — no hidden fees.
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
