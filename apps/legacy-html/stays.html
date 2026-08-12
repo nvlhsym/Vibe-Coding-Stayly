@@ -12,108 +12,57 @@
   <link rel="stylesheet" href="variables.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="landing-page">
-  <!-- Hero Section -->
-  <div class="hero-section" style="background-image: url('img/hero_image_1785986908371.png');">
-    <div class="hero-overlay"></div>
-    <header class="header landing-header">
-      <div class="logo">
-        <div class="logo-icon">s</div>
-        <span class="logo-text">stayly</span>
-      </div>
-      <nav class="main-nav">
-        <a href="#" class="nav-link active">Stays</a>
-        <a href="#" class="nav-link">Experiences</a>
-        <a href="#" class="nav-link">Trip planner</a>
-        <a href="#" class="nav-link">Host</a>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-button" aria-label="Language">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-        </button>
-        <!-- Theme Toggler -->
-        <button class="icon-button" id="theme-toggle" aria-label="Toggle Theme">
-          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        </button>
-        <!-- Link to login -->
-        <a href="login.html" class="sign-in-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-          Sign in
-          <div class="avatar-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-          </div>
-        </a>
-      </div>
-    </header>
-    
-    <div class="hero-content">
-      <p class="hero-overline">REAL PRICES. REAL HOSTS.</p>
-      <h1 class="hero-title">Find a place that actually<br>costs what it says.</h1>
-      <p class="hero-subtitle">Every listing on Stayly shows the full total upfront — cleaning, service and taxes included — before you even open checkout.</p>
-      
-      <div class="search-bar">
-        <div class="search-field">
-          <label>Where</label>
-          <input type="text" placeholder="cabin near a lake, under $150...">
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">s</div>
+      <span class="logo-text">stayly</span>
+    </a>
+    <nav class="main-nav">
+      <a href="stays.html" class="nav-link active">Stays</a>
+      <a href="experiences.html" class="nav-link">Experiences</a>
+      <a href="trip-planner.html" class="nav-link">Trip planner</a>
+      <a href="#" class="nav-link">Host</a>
+    </nav>
+    <div class="header-actions">
+      <!-- Theme Toggler -->
+      <button class="icon-button" id="theme-toggle" aria-label="Toggle Theme">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <!-- Link to login -->
+      <a href="login.html" class="sign-in-btn">
+        Sign in
+        <div class="avatar-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
         </div>
-        <div class="search-divider"></div>
-        <div class="search-field">
-          <label>Dates</label>
-          <input type="text" placeholder="Any week">
-        </div>
-        <div class="search-divider"></div>
-        <div class="search-field">
-          <label>Guests</label>
-          <input type="text" placeholder="Add guests">
-        </div>
-        <button class="btn-search">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          Search
-        </button>
-      </div>
-      <div class="search-hint">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-        Try: "cabin near the lake, under $150, pet-friendly"
-      </div>
+      </a>
     </div>
-  </div>
+  </header>
 
-  <main class="landing-main">
-    <!-- Features -->
-    <section class="features-section">
-      <div class="feature-item">
-        <div class="feature-icon feature-icon-red">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        </div>
-        <h3>Transparent totals</h3>
-        <p>Cleaning, service and taxes rolled into the nightly price you see. No surprises at checkout.</p>
+  <main class="page-content">
+    <div class="page-header">
+      <div class="page-header-text">
+        <h1>All stays</h1>
+        <p>8 places &middot; all prices include cleaning, service, and taxes.</p>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon feature-icon-orange">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </div>
-        <h3>Talk to your host</h3>
-        <p>Message hosts directly before you book. Real people, real answers, in under an hour on average.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon feature-icon-purple">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-        </div>
-        <h3>AI-native discovery</h3>
-        <p>Describe the trip you want in plain language. We surface stays that actually match — and tell you if they are likely to drop.</p>
-      </div>
-    </section>
-
-    <!-- Featured Stays -->
-    <section class="featured-stays-section">
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2>Featured stays this week</h2>
-          <p>Handpicked places our guests keep rebooking.</p>
-        </div>
-        <a href="#" class="brand-link">See all stays &rarr;</a>
-      </div>
+      <button class="filters-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+        Filters
+      </button>
+    </div>
+    
+    <div class="filter-chips">
+      <button class="chip">Cabins</button>
+      <button class="chip">Under $150</button>
+      <button class="chip">Sea view</button>
+      <button class="chip">Superhost</button>
+      <button class="chip">Wi-Fi</button>
+      <button class="chip">Pool</button>
+      <button class="chip">Ski-in/out</button>
+    </div>
+    
+    <section class="properties-section">
       <div class="property-grid">
         <!-- Card 1 -->
         <div class="property-card">
@@ -236,43 +185,17 @@
       </div>
     </section>
 
-    <!-- Host CTA -->
-    <section class="host-cta-section">
-      <div class="host-cta-content">
-        <p class="host-cta-overline">FOR HOSTS</p>
-        <h2>Your listing, without the fee games.</h2>
-        <p>One dashboard for calendars, messages, and payouts. A clear split on every booking — guests see the same total you do.</p>
-        <button class="btn-primary">Host with Stayly</button>
-      </div>
-      <div class="host-cta-stats">
-        <div class="stat-item">
-          <div class="stat-value">3.1%</div>
-          <div class="stat-label">avg. host fee</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">< 1h</div>
-          <div class="stat-label">median host response</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">96%</div>
-          <div class="stat-label">guests would rebook</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-value">0</div>
-          <div class="stat-label">hidden fees</div>
-        </div>
-      </div>
-    </section>
+
   </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <div class="logo-icon">s</div>
           <span class="logo-text">stayly</span>
-        </div>
+        </a>
         <p>A short-term rental marketplace built on transparent pricing and human hosts.</p>
       </div>
       <div class="footer-links">

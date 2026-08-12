@@ -1,0 +1,8 @@
+{
+  "name": "stayly-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

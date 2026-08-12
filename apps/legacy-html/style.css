@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--color-bg-bg-grey-bg-primary);
@@ -42,6 +46,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 1;
 }
 
 .logo-icon {
@@ -80,7 +85,9 @@ button {
 .header-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 16px;
+  flex: 1;
 }
 
 .icon-button {
@@ -408,10 +415,11 @@ button {
   position: relative;
   z-index: 2;
   margin: auto;
-  max-width: 800px;
+  width: 100%;
+  max-width: 1000px;
   text-align: center;
   color: #fff;
-  padding: 0 24px;
+  padding: 0 40px;
 }
 
 .hero-overline {
@@ -447,9 +455,21 @@ button {
   padding: 8px 8px 8px 24px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   margin-bottom: 16px;
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.search-field-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+.search-field-wrapper > svg {
+  color: var(--color-text-text-grey-text-primary);
+  flex-shrink: 0;
 }
 
 .search-field {
@@ -457,6 +477,7 @@ button {
   flex-direction: column;
   flex: 1;
   text-align: left;
+  min-width: 0;
 }
 .search-field label {
   font-size: 12px;
@@ -465,6 +486,7 @@ button {
   margin-bottom: 2px;
 }
 .search-field input {
+  width: 100%;
   border: none;
   background: transparent;
   font-size: 14px;
@@ -493,6 +515,9 @@ button {
   border-radius: 24px;
   font-weight: 600;
   font-size: 14px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 .btn-search:hover {
   background: var(--button-primary-button-primary-bg_hover);
@@ -583,10 +608,91 @@ button {
   font-size: 14px;
   color: var(--color-text-text-grey-text-secondary);
 }
+/* --- Stays Page Styles --- */
+.page-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.page-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 8px;
+}
+
+.page-header-text h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--color-text-text-grey-text-primary);
+}
+
+.page-header-text p {
+  font-size: 14px;
+  color: var(--color-text-text-grey-text-secondary);
+}
+
+.filters-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  background: transparent;
+  color: var(--color-text-text-grey-text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filters-btn:hover {
+  background-color: var(--color-bg-bg-grey-bg-secondary);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  background: transparent;
+  color: var(--color-text-text-grey-text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--color-text-text-grey-text-primary);
+  background-color: var(--color-bg-bg-grey-bg-secondary);
+}
+
+.chip.active-filter {
+  background-color: var(--color-text-text-grey-text-primary);
+  color: var(--color-bg-bg-grey-bg-primary);
+  border-color: var(--color-text-text-grey-text-primary);
+}
 
 .property-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   margin-bottom: 80px;
 }
@@ -601,6 +707,24 @@ button {
   aspect-ratio: 1;
   border-radius: 12px;
   overflow: hidden;
+}
+.heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.heart-btn:hover {
+  transform: scale(1.1);
 }
 .property-image-container img {
   width: 100%;
@@ -665,9 +789,9 @@ button {
 }
 
 .host-cta-section {
-  background: var(--color-bg-bg-grey-bg-primary_solid);
-  border-radius: 16px;
-  padding: 48px;
+  background: #1a1f24;
+  border-radius: 24px;
+  padding: 64px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
@@ -729,7 +853,7 @@ button {
 /* Responsive */
 @media (max-width: 1024px) {
   .property-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -765,7 +889,7 @@ button {
     grid-template-columns: 1fr;
   }
   .property-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .host-cta-section {
     grid-template-columns: 1fr;
@@ -777,4 +901,177 @@ button {
   .footer-links {
     gap: 40px;
   }
+}
+
+/* --- Trip Planner Styles --- */
+.trip-planner-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 40px 120px 40px;
+}
+
+.trip-planner-section .overline {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--color-text-text-grey-text-secondary);
+  margin-bottom: 16px;
+}
+
+.trip-planner-section h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--color-text-text-grey-text-primary);
+}
+
+.trip-planner-section .subtitle {
+  font-size: 14px;
+  color: var(--color-text-text-grey-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.ai-prompt-card {
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  border-radius: 20px;
+  padding: 32px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-prompt-card textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--color-text-text-grey-text-primary);
+  font-family: inherit;
+  min-height: 80px;
+  margin-bottom: 32px;
+}
+
+.ai-prompt-card textarea::placeholder {
+  color: var(--color-text-text-grey-text-secondary);
+}
+
+.prompt-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.prompt-suggestions .chip {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  background: transparent;
+  color: var(--color-text-text-grey-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.prompt-suggestions .chip:hover {
+  border-color: var(--color-text-text-grey-text-primary);
+  color: var(--color-text-text-grey-text-primary);
+  background-color: var(--color-bg-bg-grey-bg-secondary);
+}
+
+.btn-plan {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  border: none;
+}
+
+/* --- Trip Planner Results Styles --- */
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 90, 95, 0.1);
+  color: var(--button-primary-button-primary-bg); 
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.itinerary-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 32px;
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  border-radius: 24px;
+  background-color: transparent;
+}
+
+.itinerary-day {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--color-text-text-grey-text-secondary);
+}
+
+.itinerary-desc {
+  font-size: 14px;
+  color: var(--color-text-text-grey-text-primary);
+  line-height: 1.5;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-text-grey-text-primary);
+  border: 1px solid var(--color-border-border-grey-border-primary);
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-bg-grey-bg-secondary);
+}
+
+/* --- Matching Stays Styles --- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  border: 1px dashed var(--color-border-border-grey-border-primary);
+  border-radius: 24px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.empty-state h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-text-text-grey-text-primary);
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: var(--color-text-text-grey-text-secondary);
+  margin-bottom: 24px;
 }
