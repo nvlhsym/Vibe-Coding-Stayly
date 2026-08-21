@@ -528,6 +528,7 @@
 @media (max-width: 1024px) {
   .stay-content {
     flex-direction: column;
+    gap: 32px;
   }
   .stay-booking-right {
     width: 100%;
