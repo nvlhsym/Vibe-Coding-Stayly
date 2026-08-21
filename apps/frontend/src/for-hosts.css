@@ -119,7 +119,7 @@
 /* ========================================================= */
 
 .host-page {
-  padding: 80px 40px;
+  padding: 0 40px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -133,7 +133,7 @@
 .host-hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 80px;
   margin-bottom: 40px;
 }
@@ -141,6 +141,7 @@
 .host-hero-content {
   flex: 1;
   max-width: 500px;
+  text-align: left;
 }
 
 .host-overline {
