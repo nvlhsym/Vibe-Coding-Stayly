@@ -135,7 +135,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 80px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .host-hero-content {
@@ -356,10 +356,10 @@
   }
   .host-hero-content {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .host-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .host-hero-stats {
     width: 100%;
@@ -377,7 +377,7 @@
     font-size: 36px;
   }
   .host-hero {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   .host-features {
     grid-template-columns: 1fr;
