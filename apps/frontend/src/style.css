@@ -1279,7 +1279,7 @@ button {
 
 @media (max-width: 768px) {
   .trip-planner-section {
-    padding: 8px 0 80px;
+    padding: 32px 0 80px;
     text-align: left;
   }
   .trip-planner-section h1 {
