@@ -1,12 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    localStorage.setItem('user', 'Hisyam');
+    navigate('/');
+  };
+
   return (
     <>
       <Header />
-      <main className="main-content" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '40px 20px' }}>
+      <main className="main-content" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '60px 20px 120px 20px' }}>
         <div className="auth-container">
           <h1 className="auth-title">Welcome back</h1>
           <p className="auth-subtitle">Sign in to keep your saved stays and bookings in one place.</p>
@@ -25,14 +33,14 @@ export default function Login() {
             <span>OR</span>
           </div>
 
-          <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="auth-form" onSubmit={handleLogin}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="example@email.com" required />
+              <input type="email" id="email" placeholder="example@email.com" defaultValue="guest@stayly.com" required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" placeholder="At least 8 characters" required />
+              <input type="password" id="password" placeholder="At least 8 characters" defaultValue="password123" required />
             </div>
             <button type="submit" className="btn-submit">Sign In</button>
           </form>

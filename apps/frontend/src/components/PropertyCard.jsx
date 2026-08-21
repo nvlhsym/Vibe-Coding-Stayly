@@ -1,6 +1,8 @@
-export default function PropertyCard({ image, location, rating, description, price, isSuperhost }) {
+import { Link } from 'react-router-dom';
+
+export default function PropertyCard({ id, image, location, rating, description, price, isSuperhost }) {
   return (
-    <div className="property-card">
+    <Link to={`/stays/${id}`} className="property-card" style={{ textDecoration: 'none', color: 'inherit' }}>
       <div className="property-image-container">
         <img src={image} alt={location} />
         {isSuperhost && <div className="superhost-badge">Superhost</div>}
@@ -17,6 +19,6 @@ export default function PropertyCard({ image, location, rating, description, pri
         <p className="property-desc">{description}</p>
         <p className="property-price"><strong>${price}</strong> total / night - all fees included</p>
       </div>
-    </div>
+    </Link>
   );
 }

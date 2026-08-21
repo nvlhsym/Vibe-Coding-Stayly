@@ -174,3 +174,21 @@
   background-color: var(--color-text-text-color-text-brand-primary_alt);
   transform: scale(1.02);
 }
+
+@media (max-width: 768px) {
+  .experiences-title {
+    font-size: 32px;
+  }
+  .experiences-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .cta-block {
+    padding: 40px 24px;
+    margin: 40px 0;
+  }
+  .cta-block h2 {
+    font-size: 24px;
+  }
+}

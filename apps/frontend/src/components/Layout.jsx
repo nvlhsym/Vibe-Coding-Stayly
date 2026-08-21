@@ -9,9 +9,15 @@ export default function Layout() {
   return (
     <>
       {!isHome && <Header />}
-      <main className={isHome ? "landing-main" : "page-content"}>
+      
+      {!isHome ? (
+        <main className="page-content">
+          <Outlet />
+        </main>
+      ) : (
         <Outlet />
-      </main>
+      )}
+      
       <Footer />
     </>
   );

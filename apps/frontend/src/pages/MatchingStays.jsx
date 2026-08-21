@@ -1,7 +1,17 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import PropertyCard from '../components/PropertyCard';
 import { propertiesData } from '../data/properties';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+
+const FILTERS = [
+  'Cabins',
+  'Under $150',
+  'Sea view',
+  'Superhost',
+  'Wi-Fi',
+  'Pool',
+  'Ski-in/out'
+];
 
 export default function MatchingStays() {
   const location = useLocation();
@@ -10,20 +20,51 @@ export default function MatchingStays() {
   const searchParams = new URLSearchParams(location.search);
   const q = searchParams.get('q') || '';
 
+  const [activeFilters, setActiveFilters] = useState([]);
+
+  const toggleFilter = (filter) => {
+    setActiveFilters(prev => 
+      prev.includes(filter)
+        ? prev.filter(f => f !== filter)
+        : [...prev, filter]
+    );
+  };
+
   const matchedStays = useMemo(() => {
-    if (!q) return propertiesData;
-    const lowerQ = q.toLowerCase();
+    let result = propertiesData;
     
-    return propertiesData.filter(prop => {
-      let match = false;
-      prop.keywords.forEach(kw => {
-        if (lowerQ.includes(kw.toLowerCase())) {
-          match = true;
-        }
+    // Filter by search query first
+    if (q) {
+      const lowerQ = q.toLowerCase();
+      result = result.filter(prop => {
+        let match = false;
+        prop.keywords.forEach(kw => {
+          if (lowerQ.includes(kw.toLowerCase())) {
+            match = true;
+          }
+        });
+        return match;
       });
-      return match;
-    });
-  }, [q]);
+    }
+
+    // Filter by active multi-select filters
+    if (activeFilters.length > 0) {
+      result = result.filter(stay => {
+        return activeFilters.every(filter => {
+          if (filter === 'Under $150') return parseInt(stay.price) <= 150;
+          if (filter === 'Superhost') return stay.superhost === true;
+          if (filter === 'Cabins') return stay.keywords.some(k => k.toLowerCase().includes('cabin'));
+          if (filter === 'Sea view') return stay.keywords.some(k => k.toLowerCase().includes('sea') || k.toLowerCase().includes('ocean'));
+          if (filter === 'Wi-Fi') return stay.keywords.some(k => k.toLowerCase().includes('wifi'));
+          if (filter === 'Pool') return stay.keywords.some(k => k.toLowerCase().includes('pool'));
+          if (filter === 'Ski-in/out') return stay.keywords.some(k => k.toLowerCase().includes('ski'));
+          return false;
+        });
+      });
+    }
+
+    return result;
+  }, [q, activeFilters]);
 
   const handleShowEverything = () => {
     navigate('/stays');
@@ -36,27 +77,25 @@ export default function MatchingStays() {
           <h1>{q ? `Stays matching "${q}"` : 'All stays'}</h1>
           <p>{matchedStays.length} places &middot; all prices include cleaning, service, and taxes.</p>
         </div>
-        <button className="filters-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-          Filters
-        </button>
       </div>
       
       <div className="filter-chips">
-        <button className="chip">Cabins</button>
-        <button className="chip">Under $150</button>
-        <button className="chip">Sea view</button>
-        <button className="chip">Superhost</button>
-        <button className="chip">Wi-Fi</button>
-        <button className="chip">Pool</button>
-        <button className="chip">Ski-in/out</button>
+        {FILTERS.map(filter => (
+          <button 
+            key={filter}
+            className={`chip ${activeFilters.includes(filter) ? 'active-filter' : ''}`}
+            onClick={() => toggleFilter(filter)}
+          >
+            {filter}
+          </button>
+        ))}
       </div>
       
       <section className="properties-section">
         {matchedStays.length === 0 ? (
           <div className="empty-state">
             <h2>No stays match that yet.</h2>
-            <p>Try a broader description or clear your query.</p>
+            <p>Try a broader description or clear your query and filters.</p>
             <button className="btn-primary" style={{ marginTop: '16px' }} onClick={handleShowEverything}>
               Show everything
             </button>
@@ -66,6 +105,7 @@ export default function MatchingStays() {
             {matchedStays.map((prop, idx) => (
               <PropertyCard 
                 key={idx}
+                id={prop.id}
                 image={prop.image}
                 location={prop.title}
                 rating={prop.rating}

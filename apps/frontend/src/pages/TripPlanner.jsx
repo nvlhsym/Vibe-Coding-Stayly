@@ -68,9 +68,9 @@ export default function TripPlanner() {
           <button className="chip" onClick={() => handleChipClick('city loft near cafés, good wifi, monthly')}>city loft near cafés, good wifi, monthly</button>
         </div>
         
-        <button className="btn-primary btn-plan" onClick={handlePlanTrip}>
+        <button className="btn-primary btn-plan" onClick={handlePlanTrip} style={{ display: 'inline-flex', flexDirection: 'row', alignItems: 'center', gap: '8px', padding: '12px 24px' }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-          Plan my trip
+          <span>Plan my trip</span>
         </button>
       </div>
       
@@ -106,6 +106,7 @@ export default function TripPlanner() {
               {recommendedStays.map((prop, idx) => (
                 <PropertyCard 
                   key={idx}
+                  id={prop.id}
                   image={prop.image}
                   location={prop.title}
                   rating={prop.rating}

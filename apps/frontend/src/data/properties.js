@@ -1,5 +1,6 @@
 export const propertiesData = [
   {
+    id: 1,
     image: '/img/property_1_1785986918826.png',
     alt: 'Mallorca, Spain',
     superhost: true,
@@ -10,6 +11,7 @@ export const propertiesData = [
     keywords: ['sea view', 'pool', 'villa', 'spain', 'ocean', 'cliff', '4', 'walkable']
   },
   {
+    id: 2,
     image: '/img/property_2_1785986930295.png',
     alt: 'Bend, Oregon',
     superhost: true,
@@ -20,6 +22,7 @@ export const propertiesData = [
     keywords: ['cabin', 'fireplace', 'dog-friendly', 'forest', 'oregon', 'under $180', 'green', 'weekend']
   },
   {
+    id: 3,
     image: '/img/property_3_1785986940180.png',
     alt: 'Lisbon, Portugal',
     superhost: false,
@@ -30,6 +33,7 @@ export const propertiesData = [
     keywords: ['loft', 'city', 'cafés', 'wifi', 'monthly', 'portugal', 'near cafes', 'good wifi']
   },
   {
+    id: 4,
     image: '/img/property_4_1785986953941.png',
     alt: 'Ubud, Bali',
     superhost: true,
@@ -40,6 +44,7 @@ export const propertiesData = [
     keywords: ['villa', 'nature', 'rice terraces', 'bali', 'green']
   },
   {
+    id: 5,
     image: '/img/property_1_1785986918826.png',
     alt: 'Oia, Santorini',
     superhost: true,
@@ -50,6 +55,7 @@ export const propertiesData = [
     keywords: ['sea view', 'greece', 'santorini', 'white', 'caldera']
   },
   {
+    id: 6,
     image: '/img/property_3_1785986940180.png',
     alt: 'Tokyo, Japan',
     superhost: false,
@@ -60,6 +66,7 @@ export const propertiesData = [
     keywords: ['city', 'studio', 'japan', 'tokyo', 'wifi']
   },
   {
+    id: 7,
     image: '/img/property_4_1785986953941.png',
     alt: 'Marrakech, Morocco',
     superhost: true,
@@ -70,6 +77,7 @@ export const propertiesData = [
     keywords: ['riad', 'morocco', 'courtyard']
   },
   {
+    id: 8,
     image: '/img/property_2_1785986930295.png',
     alt: 'Zermatt, Switzerland',
     superhost: true,

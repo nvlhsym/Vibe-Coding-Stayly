@@ -6,7 +6,7 @@ export default function Signup() {
   return (
     <>
       <Header />
-      <main className="main-content" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '40px 20px' }}>
+      <main className="main-content" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '60px 20px 120px 20px' }}>
         <div className="auth-container">
           <h1 className="auth-title">Create an account</h1>
           <p className="auth-subtitle">Join Stayly to start booking transparent stays.</p>

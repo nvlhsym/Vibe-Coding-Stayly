@@ -1,6 +1,8 @@
-export default function ExperienceCard({ image, hostName, title, location, duration, maxGuests, rating, reviewsCount, price }) {
+import { Link } from 'react-router-dom';
+
+export default function ExperienceCard({ id, image, hostName, title, location, duration, maxGuests, rating, reviewsCount, price }) {
   return (
-    <div className="experience-card">
+    <Link to={`/experiences/${id}`} className="experience-card" style={{ textDecoration: 'none', color: 'inherit' }}>
       <div className="experience-image-wrapper">
         <img src={image} alt={title} className="experience-image" />
         <div className="host-badge">Hosted by {hostName}</div>
@@ -31,6 +33,6 @@ export default function ExperienceCard({ image, hostName, title, location, durat
           <div className="experience-price"><strong>${price}</strong> total / guest</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
