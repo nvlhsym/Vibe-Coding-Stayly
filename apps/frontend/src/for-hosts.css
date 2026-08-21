@@ -135,7 +135,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 80px;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 .host-hero-content {
@@ -378,7 +378,7 @@
     font-size: 36px;
   }
   .host-hero {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   .host-features {
     grid-template-columns: 1fr;
