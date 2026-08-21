@@ -890,6 +890,7 @@ button {
   text-decoration: none;
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 .btn-primary:hover {
   background: var(--button-primary-button-primary-bg_hover);
