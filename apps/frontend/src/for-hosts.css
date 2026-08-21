@@ -119,7 +119,7 @@
 /* ========================================================= */
 
 .host-page {
-  padding: 0 40px;
+  padding: 80px 40px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -133,7 +133,7 @@
 .host-hero {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 80px;
   margin-bottom: 100px;
 }
@@ -141,7 +141,6 @@
 .host-hero-content {
   flex: 1;
   max-width: 500px;
-  text-align: left;
 }
 
 .host-overline {
@@ -357,10 +356,10 @@
   }
   .host-hero-content {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
   }
   .host-actions {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .host-hero-stats {
     width: 100%;
