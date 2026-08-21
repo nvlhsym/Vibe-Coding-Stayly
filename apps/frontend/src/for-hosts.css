@@ -356,10 +356,10 @@
   }
   .host-hero-content {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .host-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .host-hero-stats {
     width: 100%;
