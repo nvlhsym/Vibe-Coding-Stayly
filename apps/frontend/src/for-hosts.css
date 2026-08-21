@@ -95,7 +95,7 @@
 
 @media (max-width: 768px) {
   .for-hosts-section {
-    padding: 40px 24px;
+    padding: 40px 0;
     margin-bottom: 40px;
   }
   .for-hosts-card {
