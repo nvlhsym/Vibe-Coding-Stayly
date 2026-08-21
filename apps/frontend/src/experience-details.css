@@ -302,7 +302,7 @@ button.booking-btn-alt {
 
 @media (max-width: 768px) {
   .exp-details-page {
-    padding: 0;
+    padding: 0 0 40px 0;
   }
   .exp-title {
     font-size: 24px;
