@@ -1,14 +1,41 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { auth, googleProvider } from '../firebase';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 
 export default function Login() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    localStorage.setItem('user', 'Hisyam');
-    navigate('/');
+    setError(null);
+    setLoading(true);
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem('user', userCredential.user.displayName || userCredential.user.email);
+      navigate('/');
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setError(null);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      localStorage.setItem('user', result.user.displayName || result.user.email);
+      navigate('/');
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -18,8 +45,9 @@ export default function Login() {
         <div className="auth-container">
           <h1 className="auth-title">Welcome back</h1>
           <p className="auth-subtitle">Sign in to keep your saved stays and bookings in one place.</p>
+          {error && <p className="auth-error" style={{ color: 'red', marginTop: '10px' }}>{error}</p>}
 
-          <button className="btn-google">
+          <button className="btn-google" onClick={handleGoogleLogin} type="button">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17.6402 9.2045C17.6402 8.56636 17.5829 7.95272 17.4765 7.36363H9V10.845H13.8436C13.635 11.9699 13.0009 12.9231 12.0477 13.5613V15.8195H14.9563C16.6582 14.2527 17.6402 11.9454 17.6402 9.2045Z" fill="#4285F4"/>
               <path d="M9.00001 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5613C11.2418 14.1013 10.2109 14.4204 9.00001 14.4204C6.65592 14.4204 4.67183 12.8372 3.9641 10.71H0.957275V13.0418C2.43818 15.9831 5.48183 18 9.00001 18Z" fill="#34A853"/>
@@ -36,13 +64,13 @@ export default function Login() {
           <form className="auth-form" onSubmit={handleLogin}>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="example@email.com" defaultValue="guest@stayly.com" required />
+              <input type="email" id="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input type="password" id="password" placeholder="At least 8 characters" defaultValue="password123" required />
+              <input type="password" id="password" placeholder="At least 8 characters" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </div>
-            <button type="submit" className="btn-submit">Sign In</button>
+            <button type="submit" className="btn-submit" disabled={loading}>{loading ? 'Signing In...' : 'Sign In'}</button>
           </form>
 
           <div className="auth-footer">
